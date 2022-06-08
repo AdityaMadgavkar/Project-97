@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Virtual DC minimeter</title>
+
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="Style.css">
+<script src="Main.js"></script>
+
+</head>
+<body>
+
+<center>
+
+<h1 class="heading"><u><b>Virtual DC Minimeter</b></u></h1><br><br><br>
+<button class="btn btn-link link" onclick="Vhistory()">View History</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="link" href="#calc"><u>Calculator</u></a>
+<br/>
+<br>
+<br>
+<div>
+
+<img src="Images/Ohm's Law Triangle.webp" class="image"/>
+
+
+<table align="center" width="800px" class="border">
+
+<tr bgcolor="purple">
+<th class="border" id="yellow"><b>Quantity</b></th>
+<th class="border" id="yellow"><b>Symbol</b></th>
+<th class="border" id="yellow"><b>Unit of Measurement</b></th>
+<th class="border" id="yellow"><b>Meaning</b></th>
+<th class="border" id="yellow"><b>Formula</b></th>    
+</tr>
+
+<tr bgcolor="blue">
+    <td class="border" id="white"><b>Voltage</b></td>
+    <td class="border" id="white"><b>V/E</b></td>
+    <td class="border" id="white"><b>Volts</b></td>
+    <td class="border" id="white"><b>Force that makes electrons move.</b></td>
+    <td class="border" id="white"><b>V/E = I X R</b></td>  
+    </tr>
+
+    <tr bgcolor="green">
+        <td class="border" id="white"><b>Current</b></td>
+        <td class="border" id="white"><b>I</b></td>
+        <td class="border" id="white"><b>Amperes</b></td>
+        <td class="border" id="white"><b>Flow of electrons per second</b></td>
+        <td class="border" id="white"><b>I = V/E / R</b></td>    
+        </tr>
+
+        <tr bgcolor="yellow">
+            <td class="border" id="black"><b>Resistance</b></td>
+            <td class="border" id="black"><b>R</b></td>
+            <td class="border" id="black"><b>Ohms</b></td>
+            <td class="border" id="black"><b>force opposing the flow of electrons</b></td>
+            <td class="border" id="black"><b>R = V/E / I</b></td>    
+            </tr>
+
+            <tr bgcolor="black">
+                <td class="border" id="yellow"><b>Power</b></td>
+                <td class="border" id="yellow"><b>P</b></td>
+                <td class="border" id="yellow"><b>Watts</b></td>
+                <td class="border" id="yellow"><b>Electrical Energy transferred by the circuit per second</b></td>
+                <td class="border" id="yellow"><b>P = V/E *I</b></td>    
+                </tr>
+
+<br/>
+<br/>
+<br/>
+
+<h6 style="color:white;"><i>Ohm's Law</i></h6>
+
+</table>
+<br/>
+<br/>
+<br/>
+
+<a name="calc"></a>
+
+<center>
+<h2 id="heading"><u><b>Calculator</b></u></h2><br/>
+<h4 id="heading"><i>Enter the following values except the value you want to find:</i></h4><br/>
+<p id="yellow">Voltage (volts):&nbsp;&nbsp;&nbsp;</p> <span> <input id="voltage" class="input" type="number" class="form-control">&nbsp;&nbsp;&nbsp;</span>
+<br>
+<p id="yellow">Current (amperes):&nbsp;&nbsp;&nbsp;</p> <span>  <input  id="current" class="input" type="number" class="form-control">&nbsp;&nbsp;&nbsp;</span>
+<br>
+<p id="yellow">Resistance (ohms):&nbsp;&nbsp;&nbsp;</p><span><input id="resistance" class="input" type="number" class="form-control">&nbsp;&nbsp;&nbsp;</span>
+<br>
+<p id="yellow">Power (watts):&nbsp;&nbsp;&nbsp;</p><span><input id="power" class="input" type="number" class="form-control">&nbsp;&nbsp;&nbsp;</span>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<h3 class="btn-danger" id="warning"></h3>
+<br/>
+<span><button class="btn btn-success button" onclick="calcV()">Voltage</button>&nbsp;&nbsp;&nbsp;<button class="btn btn-warning button" onclick="calcC()">Current</button>
+    <button class="btn btn-info button" onclick="calcR()">Resistance</button><button class="btn btn-primary button" onclick="calcP()">Power</button>
+    <br/>
+    <br/>
+    <span id="out" class="output"></span>
+    
+    
+
+</center>
+
+</div>
+
+
+</center>
+</body>
+</html>
